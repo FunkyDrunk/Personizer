@@ -1,0 +1,21 @@
+.header {
+  background: #CFD8DC;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  align-items: center;
+  border-bottom: 2px solid #455A64; }
+  .header .header-logo {
+    color: #263238;
+    text-shadow: 1px 1px 2px #546E7A;
+    font-family: "Poppins", sans-serif; }
+  .header .header-userinfo .header-link {
+    text-decoration: none;
+    background: #ECEFF1;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    border: solid 2px #455A64;
+    border-radius: 5px;
+    padding: 8px;
+    margin-left: 1rem;
+    font-size: 18px; }

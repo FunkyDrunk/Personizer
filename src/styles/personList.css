@@ -1,0 +1,20 @@
+.person-list {
+  background: white;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  .person-list .person-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    height: 300px;
+    width: 200px;
+    border: 2px solid #455A64;
+    border-radius: 5px;
+    padding: 1rem; }
+    .person-list .person-card img {
+      border: 1px solid black;
+      border-radius: 3px;
+      padding: 3px; }

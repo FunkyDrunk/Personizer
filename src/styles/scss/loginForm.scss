@@ -1,0 +1,63 @@
+@import "const";
+
+.login-form {
+  color: $color100;
+  font-family: $ffInco;
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .login-form-modal{
+    position: relative;
+    border: 1px solid $color50;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 60px;
+    background: $color900;
+    .login-form-modal-close{
+      position: absolute;
+      margin: 0 auto;
+      left: 1;
+      right: 0;
+      bottom: 1;
+      top:0;
+      padding: 10px 20px;
+      font-size: $fsz+10;
+      cursor: pointer;
+    }
+    h3{
+      margin: 0;
+      padding-bottom: 50px;
+        font-size: $fsz+7;
+    }
+    p{
+        font-size: $fsz+2;
+    }
+    input {
+      background: $color100;
+      border: 2px solid $color50;
+      border-radius: 3px;
+      padding: 8px;
+      font-size: $fsz;
+    }
+    button{
+      margin-top: 40px;
+      color: $color100;
+      background: $color900;
+      border-radius: 3px;
+      border: 3px solid $color100;
+      padding: 10px;
+      font-size: $fsz+2;
+      cursor: pointer;
+    }
+  }
+}

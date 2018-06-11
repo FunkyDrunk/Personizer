@@ -1,0 +1,28 @@
+@import "const";
+
+.header {
+  background: $color100;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  align-items: center;
+  border-bottom: 2px solid $color700;
+  .header-logo{
+    color: $color900;
+    text-shadow: 1px 1px 2px $color600;
+    font-family: $ffPop;
+  }
+  .header-userinfo{
+    .header-link{
+      text-decoration: none;
+      background: $color50;
+      color: black;
+      font-family: $ffPop;
+      border: solid 2px $color700;
+      border-radius: 5px;
+      padding: 8px;
+      margin-left: 1rem;
+      font-size: $fsz+2;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.rigth-bar {
+  background: #ECEFF1;
+  width: 600px;
+  font-family: "Poppins", sans-serif; }
+  .rigth-bar h4 {
+    color: #37474F;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-top: 2px solid black; }
+  .rigth-bar p {
+    padding-left: 20px;
+    font-size: 14px; }

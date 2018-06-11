@@ -1,0 +1,58 @@
+@import "const";
+
+.chat-body{
+  font-family: $ffLato;
+  border-left: 2px $color700 solid;
+  border-right: 2px $color700 solid;
+  .chat-header{
+    h3{
+      margin: 30px;
+    }
+  }
+  .chat-content {
+    .chat-content-message:nth-of-type(odd){
+    background: $color100;
+    }
+
+    .chat-content-message{
+      display: flex;
+      padding: 20px;
+      h4{
+        margin: 0;
+      }
+      p{
+      margin: 5px;
+      }
+      img{
+        margin:0 20px;
+        border-radius: 7px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+    .message-right {
+      text-align: right;
+      justify-content: flex-start;
+      flex-direction: row-reverse;
+
+    }
+  }
+  .chat-footer{
+    padding: 20px 40px;
+    display: flex;
+    border-top: 2px solid $color700;
+    textarea {
+      height: 50px;
+      width: 100%;
+      border: none;
+      font-size: $fsz;
+    }
+    button {
+      background: $color50;
+      font-size: $fsz;
+      border: 2px $color700 solid;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+  }
+}

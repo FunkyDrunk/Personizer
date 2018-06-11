@@ -1,0 +1,18 @@
+@import "const";
+
+.rigth-bar {
+  background: $color50;
+  width: 600px;
+  font-family: $ffPop;
+  h4{
+    color: $color800;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-top: 2px solid black;
+  }
+  p {
+    padding-left: 20px;
+    font-size: $fsz+-2;
+
+  }
+}
