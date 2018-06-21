@@ -1,13 +1,26 @@
 import React, { PureComponent } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+
+import history from '../services/history';
+import store from '../services/store';
 import AppContainer from './appContainer';
+import StartPageContainer from './startPageContainer';
+
+// const history = syncHistoryWithStore(browserHistory, store);
 
 class AppRoutContainer extends PureComponent {
   render() {
     return (
-      <Router>
-        <Route path="/" component={AppContainer} />
-      </Router>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <Switch>
+            <Route exact path="/" component={AppContainer} />
+            <Route path="/start/" component={StartPageContainer} />
+          </Switch>
+        </ConnectedRouter>
+      </Provider>
     );
   }
 }

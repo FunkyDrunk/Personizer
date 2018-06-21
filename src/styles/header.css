@@ -1,21 +1,23 @@
 .header {
-  background: #CFD8DC;
+  background: #eeeeee;
   display: flex;
   justify-content: space-between;
   padding: 0 3rem;
   align-items: center;
-  border-bottom: 2px solid #455A64; }
+  border-bottom: 2px solid #222222; }
   .header .header-logo {
-    color: #263238;
-    text-shadow: 1px 1px 2px #546E7A;
+    color: #222222;
+    text-shadow: 1px 1px 2px #666666;
     font-family: "Poppins", sans-serif; }
   .header .header-userinfo .header-link {
     text-decoration: none;
-    background: #ECEFF1;
+    background: #eeeeee;
     color: black;
     font-family: "Poppins", sans-serif;
-    border: solid 2px #455A64;
+    border: solid 2px #222222;
     border-radius: 5px;
     padding: 8px;
     margin-left: 1rem;
+    font-size: 18px; }
+  .header .header-userinfo span {
     font-size: 18px; }

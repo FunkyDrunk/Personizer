@@ -1,11 +1,11 @@
 .chat-body {
   font-family: "Lato", sans-serif;
-  border-left: 2px #455A64 solid;
-  border-right: 2px #455A64 solid; }
+  border-left: 2px #222222 solid;
+  border-right: 2px #222222 solid; }
   .chat-body .chat-header h3 {
     margin: 30px; }
   .chat-body .chat-content .chat-content-message:nth-of-type(odd) {
-    background: #CFD8DC; }
+    background: #eeeeee; }
   .chat-body .chat-content .chat-content-message {
     display: flex;
     padding: 20px; }
@@ -25,15 +25,15 @@
   .chat-body .chat-footer {
     padding: 20px 40px;
     display: flex;
-    border-top: 2px solid #455A64; }
+    border-top: 2px solid #222222; }
     .chat-body .chat-footer textarea {
       height: 50px;
       width: 100%;
       border: none;
       font-size: 16px; }
     .chat-body .chat-footer button {
-      background: #ECEFF1;
+      background: #eeeeee;
       font-size: 16px;
-      border: 2px #455A64 solid;
+      border: 2px #222222 solid;
       border-radius: 5px;
       margin-left: 10px; }

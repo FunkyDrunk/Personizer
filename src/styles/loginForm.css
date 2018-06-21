@@ -1,26 +1,43 @@
+.out-form {
+  transform: translateY(60%); }
+
+.out-bg {
+  opacity: 0; }
+
 .login-form {
-  color: #CFD8DC;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  color: #eeeeee;
   font-family: "Inconsolata", monospace;
-  position: fixed;
+  position: absolute;
   margin: 0 auto;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  transition: 1s; }
   .login-form .login-form-modal {
     position: relative;
-    border: 1px solid #ECEFF1;
-    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px #666666;
     display: flex;
+    border-radius: 2px;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding: 60px;
-    background: #263238; }
+    background: #222222;
+    transition: 1s; }
+    .login-form .login-form-modal .login-form-modal-loader {
+      padding-top: 40px; }
+    .login-form .login-form-modal .login-form-modal-error {
+      color: red;
+      width: 220px; }
+    .login-form .login-form-modal .login-form-modal-error-form {
+      border: red 1px solid; }
     .login-form .login-form-modal .login-form-modal-close {
       position: absolute;
       margin: 0 auto;
@@ -28,9 +45,15 @@
       right: 0;
       bottom: 1;
       top: 0;
-      padding: 10px 20px;
-      font-size: 26px;
+      padding: 20px;
       cursor: pointer; }
+      .login-form .login-form-modal .login-form-modal-close img {
+        width: 20px; }
+    .login-form .login-form-modal .login-form-modal-forgot {
+      text-decoration: none;
+      padding-top: 20px;
+      border-bottom: 1px solid #eeeeee;
+      color: #eeeeee; }
     .login-form .login-form-modal h3 {
       margin: 0;
       padding-bottom: 50px;
@@ -38,17 +61,23 @@
     .login-form .login-form-modal p {
       font-size: 18px; }
     .login-form .login-form-modal input {
-      background: #CFD8DC;
-      border: 2px solid #ECEFF1;
+      background: #eeeeee;
+      border: 2px solid #eeeeee;
       border-radius: 3px;
       padding: 8px;
       font-size: 16px; }
     .login-form .login-form-modal button {
       margin-top: 40px;
-      color: #CFD8DC;
-      background: #263238;
+      color: #55cccc;
+      background: #222222;
       border-radius: 3px;
-      border: 3px solid #CFD8DC;
+      border: 3px solid #55cccc;
       padding: 10px;
-      font-size: 18px;
-      cursor: pointer; }
+      font-size: 22px;
+      cursor: pointer;
+      transition: 0.3s;
+      transform: rotate(-2deg); }
+    .login-form .login-form-modal button:hover {
+      transform: rotate(0deg);
+      color: #6699aa;
+      border: 3px solid #6699aa; }

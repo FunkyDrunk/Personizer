@@ -2,7 +2,7 @@
 
 .left-bar{
   font-family: $ffPop;
-  background: $color50;
+  background: $colorLigth;
   width: 700px;
   input{
     margin: 10px;
@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     padding:5px 10px;
-    border-bottom: 2px solid $color200;
+    border-bottom: 2px solid $colorAccentLow;
     img{
       border-radius: 7px;
       width: 75px;

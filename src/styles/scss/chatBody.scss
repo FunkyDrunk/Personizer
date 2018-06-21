@@ -2,8 +2,8 @@
 
 .chat-body{
   font-family: $ffLato;
-  border-left: 2px $color700 solid;
-  border-right: 2px $color700 solid;
+  border-left: 2px $colorDark solid;
+  border-right: 2px $colorDark solid;
   .chat-header{
     h3{
       margin: 30px;
@@ -11,7 +11,7 @@
   }
   .chat-content {
     .chat-content-message:nth-of-type(odd){
-    background: $color100;
+    background: $colorLigth;
     }
 
     .chat-content-message{
@@ -40,7 +40,7 @@
   .chat-footer{
     padding: 20px 40px;
     display: flex;
-    border-top: 2px solid $color700;
+    border-top: 2px solid $colorDark;
     textarea {
       height: 50px;
       width: 100%;
@@ -48,9 +48,9 @@
       font-size: $fsz;
     }
     button {
-      background: $color50;
+      background: $colorLigth;
       font-size: $fsz;
-      border: 2px $color700 solid;
+      border: 2px $colorDark solid;
       border-radius: 5px;
       margin-left: 10px;
     }

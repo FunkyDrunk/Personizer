@@ -1,28 +1,49 @@
 @import "const";
 
+.out-form{
+  transform: translateY(60%);
+}
+.out-bg{
+  opacity: 0;
+}
 .login-form {
-  color: $color100;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0,0,0,0.3);
+  color: $colorLigth;
   font-family: $ffInco;
-  position: fixed;
+  position: absolute;
   margin: 0 auto;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 1s;
   .login-form-modal{
     position: relative;
-    border: 1px solid $color50;
-    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px $colorGray;
     display: flex;
+    border-radius: 2px;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding: 60px;
-    background: $color900;
+    background: $colorDark;
+    transition: 1s;
+    .login-form-modal-loader{
+      padding-top: 40px;
+    }
+    .login-form-modal-error{
+      color:red;
+      width: 220px;
+    }
+    .login-form-modal-error-form{
+      border: red 1px solid;
+    }
+
     .login-form-modal-close{
       position: absolute;
       margin: 0 auto;
@@ -30,9 +51,17 @@
       right: 0;
       bottom: 1;
       top:0;
-      padding: 10px 20px;
-      font-size: $fsz+10;
+      padding: 20px;
       cursor: pointer;
+      img{
+        width: 20px;
+      }
+    }
+    .login-form-modal-forgot{
+      text-decoration: none;
+      padding-top: 20px;
+      border-bottom: 1px solid $colorLigth;
+      color: $colorLigth;
     }
     h3{
       margin: 0;
@@ -43,21 +72,29 @@
         font-size: $fsz+2;
     }
     input {
-      background: $color100;
-      border: 2px solid $color50;
+      background: $colorLigth;
+      border: 2px solid $colorLigth;
       border-radius: 3px;
       padding: 8px;
       font-size: $fsz;
     }
     button{
       margin-top: 40px;
-      color: $color100;
-      background: $color900;
+      color: $colorAccent;
+      background: $colorDark;
       border-radius: 3px;
-      border: 3px solid $color100;
+      border: 3px solid $colorAccent;
       padding: 10px;
-      font-size: $fsz+2;
+      font-size: $fsz+6;
       cursor: pointer;
+      transition: 0.3s;
+        transform: rotate(-2deg);
+    }
+    button:hover {
+      transform: rotate(0deg);
+      color: $colorAccentLow;
+      border: 3px solid $colorAccentLow;
+
     }
   }
 }

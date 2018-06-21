@@ -1,0 +1,13 @@
+.start-page {
+  font-family: "Poppins", sans-serif;
+  text-align: center; }
+  .start-page img {
+    width: 300px;
+    padding: 50px; }
+  .start-page .start-page-preview {
+    padding: 20px; }
+    .start-page .start-page-preview h2 a {
+      text-decoration: none;
+      color: #6699aa;
+      border-bottom: 2px #6699aa solid;
+      cursor: pointer; }

@@ -1,0 +1,10 @@
+.example-appear {
+  opacity: 0.01;
+  transform: translateY(30%);
+}
+
+.example-appear.example-appear-active {
+  transform: translateY(0%);
+  opacity: 1;
+  transition: 1s;
+}

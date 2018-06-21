@@ -1,27 +1,30 @@
 @import "const";
 
 .header {
-  background: $color100;
+  background: $colorLigth;
   display: flex;
   justify-content: space-between;
   padding: 0 3rem;
   align-items: center;
-  border-bottom: 2px solid $color700;
+  border-bottom: 2px solid $colorDark;
   .header-logo{
-    color: $color900;
-    text-shadow: 1px 1px 2px $color600;
+    color: $colorDark;
+    text-shadow: 1px 1px 2px $colorGray;
     font-family: $ffPop;
   }
   .header-userinfo{
     .header-link{
       text-decoration: none;
-      background: $color50;
+      background: $colorLigth;
       color: black;
       font-family: $ffPop;
-      border: solid 2px $color700;
+      border: solid 2px $colorDark;
       border-radius: 5px;
       padding: 8px;
       margin-left: 1rem;
+      font-size: $fsz+2;
+    }
+    span{
       font-size: $fsz+2;
     }
   }

@@ -1,0 +1,22 @@
+@import "const";
+
+.start-page{
+  font-family: $ffPop;
+  text-align: center;
+  img{
+    width: 300px;
+    padding: 50px;
+  }
+  .start-page-preview{
+    // box-shadow: 3px 3px 10px 3px $colorAccentLow;
+    padding: 20px;
+    h2{
+      a{
+        text-decoration: none;
+        color: $colorAccentLow;
+        border-bottom: 2px $colorAccentLow solid;
+        cursor: pointer;
+      }
+    }
+  }
+}

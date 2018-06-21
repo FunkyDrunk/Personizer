@@ -8,11 +8,11 @@ class Header extends PureComponent {
     return (
       <div className="header">
         <div className="header-logo">
-          <h2>PersonIzer</h2>
+          <Link to="/start" className="header-link"><h2>PersonIzer</h2></Link>
         </div>
         <div className="header-userinfo">
-          <Link to="/" className="header-link">Sign in</Link>
-          <Link to="/" className="header-link">Sign up</Link>
+          <span>Jim Chambers</span>
+          <Link to="/" className="header-link">Edit profile</Link>
         </div>
       </div>
     );
