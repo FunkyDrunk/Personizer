@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { routerMiddleware, push } from 'react-router-redux';
+import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -28,7 +28,6 @@ class LoginFormContainer extends Component {
     });
   }
   handleSubmit = (event) => {
-    console.log(this.props.formType)
       const { email, login, password } = this.state.formValues
     switch (this.props.formType) {
       case 'login':

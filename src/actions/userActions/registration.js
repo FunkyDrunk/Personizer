@@ -2,7 +2,7 @@ import axios from 'axios';
 import { push } from 'react-router-redux';
 import { serverURL } from '../../const';
 
-export default function signUp(email, name, password) {
+export default function signUp(email, login, password) {
   return (dispatch) => {
     dispatch({ type: 'REGISTRATION_SEND' });
     axios({
@@ -10,14 +10,14 @@ export default function signUp(email, name, password) {
       url: `${serverURL}/registration/`,
       data: {
         email,
-        name,
+        login,
         password,
       },
     }).then((response) => {
       if (response.data.token) {
         window.localStorage.setItem('PersonToken', response.data.token);
         dispatch({ type: 'REGISTRATION_SUCCESS', payload: response.data });
-        dispatch(push('/'));
+        dispatch(push('/main'));
       } else {
         dispatch({ type: 'REGISTRATION_ERROR', payload: response.data });
         setTimeout(() => {

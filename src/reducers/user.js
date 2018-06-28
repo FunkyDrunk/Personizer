@@ -20,6 +20,10 @@ const user = (state = {}, action) => {
       return { error: action.payload, loading: false };
     case 'LOG_OUT':
       return {};
+    case 'CHANGE_ROLE_SUCCESS':
+      return { ...state, ...action.payload };
+    case 'CHANGE_ROLE_ERROR':
+      return { ...state, error: action.payload };
     default:
       return state;
   }

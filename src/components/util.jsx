@@ -4,6 +4,7 @@ import '../styles/personList.css';
 
 class PersonList extends Component {
   render() {
+    console.log(this.props)
     return (
       <div className="person-list">
         <div className="person-card">

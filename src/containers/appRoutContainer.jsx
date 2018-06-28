@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 
@@ -16,8 +16,8 @@ class AppRoutContainer extends PureComponent {
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <Switch>
-            <Route exact path="/" component={AppContainer} />
-            <Route path="/start/" component={StartPageContainer} />
+            <Route  path="/main/" component={AppContainer} />
+            <Route  path="/start/" component={StartPageContainer} />
           </Switch>
         </ConnectedRouter>
       </Provider>

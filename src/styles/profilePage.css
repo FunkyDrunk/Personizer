@@ -1,0 +1,30 @@
+.profile-page {
+  border-left: 1px solid #6699aa; }
+  .profile-page .profile-page-content {
+    padding: 10px 30px; }
+    .profile-page .profile-page-content button {
+      border: 0;
+      font-size: 16px;
+      background: #eeeeee; }
+    .profile-page .profile-page-content .profile-avatar {
+      height: 200px;
+      width: 200px;
+      border: 1px solid black;
+      border-radius: 2px; }
+    .profile-page .profile-page-content .profile-page-content-userinfo {
+      width: 300px; }
+      .profile-page .profile-page-content .profile-page-content-userinfo form {
+        display: flex;
+        flex-direction: column; }
+        .profile-page .profile-page-content .profile-page-content-userinfo form button {
+          margin: 10px; }
+        .profile-page .profile-page-content .profile-page-content-userinfo form label {
+          padding-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          .profile-page .profile-page-content .profile-page-content-userinfo form label input, .profile-page .profile-page-content .profile-page-content-userinfo form label select {
+            border: 0;
+            border-radius: 2px;
+            padding: 3px;
+            font-size: 15px; }

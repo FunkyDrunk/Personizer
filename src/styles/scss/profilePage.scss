@@ -1,0 +1,41 @@
+@import "_const";
+
+.profile-page{
+  border-left: 1px solid $colorAccentLow;
+  .profile-page-content{
+    padding: 10px 30px;
+    button{
+      border: 0;
+      font-size: $fsz;
+      background: $colorLigth;
+    }
+    .profile-avatar{
+      height: 200px;
+      width: 200px;
+      border: 1px solid black;
+      border-radius: 2px;
+    }
+    .profile-page-content-userinfo{
+      width: 300px;
+      form{
+        display: flex;
+        flex-direction: column;
+        button{
+          margin: 10px;
+        }
+        label{
+          padding-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          input, select{
+            border: 0;
+            border-radius: 2px;
+            padding: 3px;
+            font-size: $fsz - 1;
+          }
+        }
+      }
+    }
+  }
+}

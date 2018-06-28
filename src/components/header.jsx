@@ -11,8 +11,8 @@ class Header extends PureComponent {
           <Link to="/start" className="header-link"><h2>PersonIzer</h2></Link>
         </div>
         <div className="header-userinfo">
-          <span>Jim Chambers</span>
-          <Link to="/" className="header-link">Edit profile</Link>
+          <span>{this.props.name || 'Guest'}</span>
+          <Link to="/main/profile" className="header-link">My profile</Link>
         </div>
       </div>
     );

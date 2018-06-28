@@ -11,7 +11,6 @@ import '../styles/loginForm.css';
 
 class LoginForm extends Component {
   render() {
-    console.log(this.props)
     return (
       <div
         className={
@@ -69,7 +68,8 @@ class LoginForm extends Component {
                 />
               </Fragment>
             }
-            {this.porps.err.success?<p>this.porps.err.success</p>:null}
+            {this.props.err.success ? <p>{this.props.err.success}</p> : null} { // FIXME: Ошибку поправить
+            }
             {this.props.err ? <p className="login-form-modal-error">{this.props.err.errMsg}</p> : null}
             {this.props.loading ? <p className="login-form-modal-loader" >Loading...</p> : <button onClick={this.props.handleSubmit}> {this.props.submitButton}</button>}
             {this.props.forgotLink ? <Link to="/start/forgot" className="login-form-modal-forgot"> Forgot password?</Link> : null}

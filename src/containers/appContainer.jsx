@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import { push } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import HeaderContainer from './headerContainer';
 import LeftBarContainer from './leftBarContainer';
 import RightBarContainer from './rightBarContainer';
-import PersonListContainer from './personListContainer';
 import ChatBodyContainer from './chatBodyContainer';
+import ProfilePageContainer from './profilePageContainer';
+
+import signWithToken from '../actions/userActions/tokenSign';
+import sendStatus from '../actions/userList/sendStatus';
 
 class AppContainer extends Component {
+  componentDidMount() {
+    if (window.localStorage.getItem('PersonToken')) {
+      this.props.signWithToken();
+      this.props.sendStatus();
+    } else this.props.push('/start/');
+  }
   render() {
     return (
       <div className="App">
@@ -14,10 +28,26 @@ class AppContainer extends Component {
           <LeftBarContainer />
           <ChatBodyContainer />
           <RightBarContainer />
+          <Route path="/main/profile" component={ProfilePageContainer} />
         </div>
       </div>
     );
   }
 }
 
-export default AppContainer;
+function mapDispatchToProps(dispatch) {
+  return {
+    push: bindActionCreators(push, dispatch),
+    signWithToken: bindActionCreators(signWithToken, dispatch),
+    sendStatus: bindActionCreators(sendStatus, dispatch),
+    // forgotPass: bindActionCreators(forgotPass, dispatch),
+  };
+}
+
+function mapStateToProps(state) {
+  return {
+    ...state,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);

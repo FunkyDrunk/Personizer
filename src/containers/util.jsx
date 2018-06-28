@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import PersonList from '../components/personList';
 import getUsers from '../actions/userList/getUsers';
-import LeftBar from '../components/leftBar';
 
-class LeftBarContainer extends Component {
+class PersonListContainer extends Component {
   componentDidMount() {
     this.props.getUsers();
   }
   render() {
+    console.log('asd');
     return (
-      <LeftBar {...this.props.users} />
+      <PersonList users={this.props.users} />
     );
   }
 }
-
 function mapDispatchToProps(dispatch) {
   return {
     // push: bindActionCreators(push, dispatch),
@@ -29,4 +29,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LeftBarContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PersonListContainer);
