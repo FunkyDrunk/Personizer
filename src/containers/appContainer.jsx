@@ -26,9 +26,9 @@ class AppContainer extends Component {
         <HeaderContainer />
         <div className="main-content">
           <LeftBarContainer />
-          <ChatBodyContainer />
-          <RightBarContainer />
+          <Route path="/main/chat/:id" component={ChatBodyContainer} />
           <Route path="/main/profile" component={ProfilePageContainer} />
+          <Route path="/main/chat" component={RightBarContainer} />
         </div>
       </div>
     );

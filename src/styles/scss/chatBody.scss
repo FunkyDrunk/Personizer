@@ -10,10 +10,8 @@
     }
   }
   .chat-content {
-    .chat-content-message:nth-of-type(odd){
-    background: $colorLigth;
-    }
-
+    max-height: 70vh;
+    overflow: auto;
     .chat-content-message{
       display: flex;
       padding: 20px;
@@ -29,6 +27,9 @@
         width: 100px;
         height: 100px;
       }
+    }
+    .delivered {
+      background: $colorAccentLow;
     }
     .message-right {
       text-align: right;

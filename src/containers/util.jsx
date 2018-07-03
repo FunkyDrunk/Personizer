@@ -10,7 +10,6 @@ class PersonListContainer extends Component {
     this.props.getUsers();
   }
   render() {
-    console.log('asd');
     return (
       <PersonList users={this.props.users} />
     );

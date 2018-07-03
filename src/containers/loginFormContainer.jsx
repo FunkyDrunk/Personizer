@@ -34,7 +34,6 @@ class LoginFormContainer extends Component {
       this.props.signIn(login, password)
         break;
       case 'registration':
-      console.log('asd')
       this.props.signUp(email, login, password)
         break;
       case 'forgot':
@@ -58,7 +57,6 @@ class LoginFormContainer extends Component {
 
   }
   render() {
-    console.log(this.props)
     const loginForm = {
       title: 'Login',
       email: false,

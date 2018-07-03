@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+import ChatForm from './chatForm';
+import ChatMessage from './chatMessage';
 import '../styles/chatBody.css';
 
 class ChatBody extends Component {
@@ -6,77 +9,39 @@ class ChatBody extends Component {
     return (
       <div className="chat-body">
         <div className="chat-header">
-          <h3>Bacand team 'Cucumber'</h3>
+          <h3>{this.props.chatUser.name}</h3>
+          <h4>{this.props.chatUser.job}</h4>
         </div>
         <div className="chat-content">
-          <div className="chat-content-message">
-            <img src="https://randomuser.me/api/portraits/women/60.jpg" />
-            <div className="chat-content-message-body">
-              <h4>Anna</h4>
-              <p>08:30 05.10.2021</p>
-              <div>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-              </div>
-            </div>
-          </div>
-          <div className="chat-content-message message-right">
-            <img src="https://randomuser.me/api/portraits/men/16.jpg" />
-            <div className="chat-content-message-body">
-              <h4>Boris</h4>
-              <p>09:30 05.10.2021</p>
-              <div>
-            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-              </div>
-            </div>
-          </div>
-          <div className="chat-content-message message-right">
-            <img src="https://randomuser.me/api/portraits/men/16.jpg" />
-            <div className="chat-content-message-body">
-              <h4>Boris</h4>
-              <p>09:30 05.10.2021</p>
-              <div>
-            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-              </div>
-            </div>
-          </div>
-          <div className="chat-content-message">
-            <img src="https://randomuser.me/api/portraits/women/60.jpg" />
-            <div className="chat-content-message-body">
-              <h4>Anna</h4>
-              <p>08:30 05.10.2021</p>
-              <div>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-              </div>
-            </div>
-          </div>
-          <div className="chat-content-message message-right">
-            <img src="https://randomuser.me/api/portraits/men/16.jpg" />
-            <div className="chat-content-message-body">
-              <h4>Boris</h4>
-              <p>09:30 05.10.2021</p>
-              <div>
-            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-              </div>
-            </div>
-          </div>
-          <div className="chat-content-message">
-            <img src="https://randomuser.me/api/portraits/women/60.jpg" />
-            <div className="chat-content-message-body">
-              <h4>Anna</h4>
-              <p>09:30 05.10.2021</p>
-              <div>
-            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-              </div>
-            </div>
-          </div>
+          {this.props.messages.map((elem) => {
+            const textMessage = elem.text;
+            const date = elem.created;
+            if (elem.from === this.props.chatUser.id) {
+              const userAvatar = this.props.chatUser.avatar;
+              const userName = this.props.chatUser.name;
+              return <ChatMessage key={elem._id} userAvatar={userAvatar} userName={userName} date={date} textMessage={textMessage} />;
+            }else{
+              const { userAvatar, userName } = this.props
+              return <ChatMessage key={elem._id} myMessage={true} viewed={elem.viewed} messageRigth={true} userAvatar={userAvatar} userName={userName} date={date} textMessage={textMessage} />;
+            }
+          })
+          }
         </div>
-        <div className='chat-footer'>
-          <textarea type='textarea' />
-          <button>submit</button>
-        </div>
+        <ChatForm messageText={this.props.messageText} handleChange={this.props.handleChange} handleSubmit={this.props.handleSubmit} />
       </div>
     );
   }
 }
 
+
 export default ChatBody;
+
+
+ChatBody.defaultProps = {
+  chatUser: {
+    name: '',
+    avatar: '',
+    job: '',
+  },
+  messages: [],
+};
