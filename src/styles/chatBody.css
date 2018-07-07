@@ -1,27 +1,31 @@
 .chat-body {
+  width: 100%;
   font-family: "Lato", sans-serif;
   border-left: 2px #222222 solid;
   border-right: 2px #222222 solid; }
   .chat-body .chat-header h3 {
     margin: 30px; }
-  .chat-body .chat-content .chat-content-message:nth-of-type(odd) {
-    background: #eeeeee; }
-  .chat-body .chat-content .chat-content-message {
-    display: flex;
-    padding: 20px; }
-    .chat-body .chat-content .chat-content-message h4 {
-      margin: 0; }
-    .chat-body .chat-content .chat-content-message p {
-      margin: 5px; }
-    .chat-body .chat-content .chat-content-message img {
-      margin: 0 20px;
-      border-radius: 7px;
-      width: 100px;
-      height: 100px; }
-  .chat-body .chat-content .message-right {
-    text-align: right;
-    justify-content: flex-start;
-    flex-direction: row-reverse; }
+  .chat-body .chat-content {
+    max-height: 70vh;
+    overflow: auto; }
+    .chat-body .chat-content .chat-content-message {
+      display: flex;
+      padding: 20px; }
+      .chat-body .chat-content .chat-content-message h4 {
+        margin: 0; }
+      .chat-body .chat-content .chat-content-message p {
+        margin: 5px; }
+      .chat-body .chat-content .chat-content-message img {
+        margin: 0 20px;
+        border-radius: 7px;
+        width: 100px;
+        height: 100px; }
+    .chat-body .chat-content .delivered {
+      background: #6699aa; }
+    .chat-body .chat-content .message-right {
+      text-align: right;
+      justify-content: flex-start;
+      flex-direction: row-reverse; }
   .chat-body .chat-footer {
     padding: 20px 40px;
     display: flex;

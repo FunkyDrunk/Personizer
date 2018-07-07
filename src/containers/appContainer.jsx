@@ -12,12 +12,18 @@ import ProfilePageContainer from './profilePageContainer';
 
 import signWithToken from '../actions/userActions/tokenSign';
 import sendStatus from '../actions/userList/sendStatus';
+import chatSocket from '../actions/chatSocket';
+import getMessages from '../actions/chatActions/getMessages';
+import getUsers from '../actions/userList/getUsers';
 
 class AppContainer extends Component {
   componentDidMount() {
+    chatSocket();
     if (window.localStorage.getItem('PersonToken')) {
       this.props.signWithToken();
+      this.props.getMessages();
       this.props.sendStatus();
+      this.props.getUsers();
     } else this.props.push('/start/');
   }
   render() {
@@ -26,9 +32,10 @@ class AppContainer extends Component {
         <HeaderContainer />
         <div className="main-content">
           <LeftBarContainer />
-          <ChatBodyContainer />
-          <RightBarContainer />
+          <Route path="/main/chat/:id" component={ChatBodyContainer} />
           <Route path="/main/profile" component={ProfilePageContainer} />
+          {// <Route path="/main/chat" component={RightBarContainer} />
+        }
         </div>
       </div>
     );
@@ -39,8 +46,9 @@ function mapDispatchToProps(dispatch) {
   return {
     push: bindActionCreators(push, dispatch),
     signWithToken: bindActionCreators(signWithToken, dispatch),
+    getUsers: bindActionCreators(getUsers, dispatch),
     sendStatus: bindActionCreators(sendStatus, dispatch),
-    // forgotPass: bindActionCreators(forgotPass, dispatch),
+    getMessages: bindActionCreators(getMessages, dispatch),
   };
 }
 

@@ -54,7 +54,6 @@ class ProfilePageContainer extends PureComponent {
   }
 
   handleSubmit = (event) => {
-    console.log(event.target)
     event.preventDefault();
     const { userInf, passwordForms, roleForm, avatarForm  } = this.state;
     switch (event.target.name) {

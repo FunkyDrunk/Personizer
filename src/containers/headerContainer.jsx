@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import { push } from 'react-router-redux';
-// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 
@@ -15,14 +13,6 @@ class HeaderContainer extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    // push: bindActionCreators(push, dispatch),
-    // signUp: bindActionCreators(signUp, dispatch),
-    // signIn: bindActionCreators(signIn, dispatch),
-    // forgotPass: bindActionCreators(forgotPass, dispatch),
-  };
-}
 
 function mapStateToProps(state) {
   return {
@@ -30,4 +20,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);
+export default connect(mapStateToProps)(HeaderContainer);

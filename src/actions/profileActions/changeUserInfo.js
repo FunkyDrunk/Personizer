@@ -5,7 +5,6 @@ export default function changeUserInfo(data) {
   const token = window.localStorage.getItem('PersonToken');
   return (dispatch) => {
     axios.post(`${serverURL}/profile/info`, { token, ...data }).then((response) => {
-      console.log(response.data);
       if (response.data.userLogin) {
         dispatch({ type: 'CHANGE_INFO_SUCCESS', payload: response.data });
       } else dispatch({ type: 'CHANGE_INFO_ERROR', payload: response.data.error });
