@@ -8,22 +8,39 @@ class ChatBody extends Component {
   render() {
     return (
       <div className="chat-body">
-        <div className="chat-header">
-          <h3>{this.props.chatUser.name}</h3>
-          <h4>{this.props.chatUser.job}</h4>
-        </div>
+        {this.props.chatUser ?
+          <div className="chat-header">
+            <h3>{this.props.chatUser.name}</h3>
+            <h4>{this.props.chatUser.job}</h4>
+          </div>
+            : null}
         <div className="chat-content">
-          {this.props.messages.map((elem) => {
+          {this.props.messages && this.props.messages.map((elem) => {
             const textMessage = elem.text;
             const date = elem.created;
             if (elem.from === this.props.chatUser.id) {
               const userAvatar = this.props.chatUser.avatar;
               const userName = this.props.chatUser.name;
-              return <ChatMessage key={elem._id} userAvatar={userAvatar} userName={userName} date={date} textMessage={textMessage} />;
-            }else{
-              const { userAvatar, userName } = this.props
-              return <ChatMessage key={elem._id} myMessage={true} viewed={elem.viewed} messageRigth={true} userAvatar={userAvatar} userName={userName} date={date} textMessage={textMessage} />;
+              return (<ChatMessage
+                key={elem._id}
+                userAvatar={userAvatar}
+                userName={userName}
+                date={date}
+                textMessage={textMessage}
+              />);
             }
+              const { userAvatar, userName } = this.props;
+              // FIXME: myMessage and messageRigth
+              return (<ChatMessage
+                key={elem._id}
+                myMessage
+                viewed={elem.viewed}
+                messageRigth
+                userAvatar={userAvatar}
+                userName={userName}
+                date={date}
+                textMessage={textMessage}
+              />);
           })
           }
         </div>

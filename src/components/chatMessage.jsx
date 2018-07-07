@@ -5,7 +5,7 @@ class ChatMessage extends Component {
     return (
       <div className={`chat-content-message
         ${this.props.messageRigth && 'message-right'}
-        ${this.props.myMessage && (this.props.viewed ? 'viewed' : 'delivered') }
+        ${this.props.myMessage && (this.props.viewed ? 'viewed' : 'delivered')}
         `}
       >
         <img src={this.props.userAvatar} />
@@ -16,7 +16,7 @@ class ChatMessage extends Component {
             {this.props.textMessage}
           </div>
         </div>
-        
+
       </div>
     );
   }

@@ -1,10 +1,7 @@
-
-import io from 'socket.io-client';
-import { serverURL } from '../../const';
+import { users } from '../chatSocket';
 
 export default function getUsers() {
   const token = window.localStorage.getItem('PersonToken');
-  const users = io.connect(`${serverURL}/users`);
   return (dispatch) => {
     users.on('connect', () => {
       users.emit('getUsers', token, (data) => {

@@ -3,18 +3,30 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import ChatBody from '../components/chatBody';
-import getUser from '../actions/chatActions/getUser';
 import sendMessage from '../actions/chatActions/sendMessage';
-import getMessages from '../actions/chatActions/getMessages';
+import vievMessages from '../actions/chatActions/vievMessages';
 
 
 class ChatBodyContainer extends Component {
   state = {
     message:'',
+    messages: [],
+    member: {},
   }
-  componentDidMount() {
-    this.props.getUser(this.props.match.params.id);
-    this.props.getMessages(this.props.match.params.id);
+
+  sendViev = () => {
+    vievMessages(this.poros.match.params.id)
+  }
+  changeMessages = (setMessages) => {
+    this.setState({
+      messages: setMessages
+    })
+  }
+
+  changeMember = (setMember) => {
+    this.setState({
+      member: setMember
+    })
   }
 
   handleChange = (event) => {
@@ -34,11 +46,18 @@ class ChatBodyContainer extends Component {
 
 
   render() {
-    console.log(this.state)
+    console.log(this.props)
+    let member;
+    if(this.props.users.offline){
+      member = this.props.users.offline.filter( elem => {
+        if(elem.id === this.props.match.params.id) return elem
+      }).shift()
+    }
     return (
       <ChatBody
-      messages={this.props.chat.messages}
-      chatUser={this.props.chat.user}
+      messages={this.props.chat.messages?this.props.chat.messages[this.props.match.params.id]:[]}
+      vievMessages={this.sendViev}
+      chatUser={'' || member}
       messageText={this.state.message}
       handleChange={this.handleChange}
       handleSubmit={this.handleSubmit}
@@ -53,9 +72,8 @@ class ChatBodyContainer extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getUser: bindActionCreators(getUser, dispatch),
     sendMessage: bindActionCreators(sendMessage, dispatch),
-    getMessages: bindActionCreators(getMessages, dispatch),
+    vievMessages: bindActionCreators(vievMessages, dispatch),
   };
 }
 
