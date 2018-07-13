@@ -15,6 +15,7 @@ import sendStatus from '../actions/userList/sendStatus';
 import chatSocket from '../actions/chatSocket';
 import getMessages from '../actions/chatActions/getMessages';
 import getUsers from '../actions/userList/getUsers';
+import getConference from '../actions/conference/getConference';
 
 class AppContainer extends Component {
   componentDidMount() {
@@ -24,9 +25,11 @@ class AppContainer extends Component {
       this.props.getMessages();
       this.props.sendStatus();
       this.props.getUsers();
+      this.props.getConference();
     } else this.props.push('/start/');
   }
   render() {
+    console.log(this.props)
     return (
       <div className="App">
         <HeaderContainer />
@@ -34,8 +37,7 @@ class AppContainer extends Component {
           <LeftBarContainer />
           <Route path="/main/chat/:id" component={ChatBodyContainer} />
           <Route path="/main/profile" component={ProfilePageContainer} />
-          {// <Route path="/main/chat" component={RightBarContainer} />
-        }
+          <Route path="/main/chat" component={RightBarContainer} />
         </div>
       </div>
     );
@@ -49,6 +51,7 @@ function mapDispatchToProps(dispatch) {
     getUsers: bindActionCreators(getUsers, dispatch),
     sendStatus: bindActionCreators(sendStatus, dispatch),
     getMessages: bindActionCreators(getMessages, dispatch),
+    getConference: bindActionCreators(getConference, dispatch),
   };
 }
 

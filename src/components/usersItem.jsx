@@ -11,6 +11,7 @@ class UsersItem extends PureComponent {
         <img width="50" heigth="50" src={this.props.avatar} alt="user avatar" />
         <p>{this.props.name}</p>
         <p> ({this.props.status ? 'Online' : 'Offline'})</p>
+        <p>{this.props.newMessages && this.props.newMessages != 0? 'New messages ' +this.props.newMessages : null} </p>
       </Link>
     );
   }

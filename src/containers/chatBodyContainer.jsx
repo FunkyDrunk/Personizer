@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import ChatBody from '../components/chatBody';
 import sendMessage from '../actions/chatActions/sendMessage';
-import vievMessages from '../actions/chatActions/vievMessages';
+import viewMessages from '../actions/chatActions/vievMessages';
 
 
 class ChatBodyContainer extends Component {
@@ -14,9 +14,16 @@ class ChatBodyContainer extends Component {
     member: {},
   }
 
-  sendViev = () => {
-    vievMessages(this.poros.match.params.id)
+  componentWillUpdate(props){
+    if(this.props.match.params.id != props.match.params.id){
+      this.props.viewMessages(props.match.params.id)
+    }
   }
+
+  componentWillMount() {
+    this.props.viewMessages(this.props.match.params.id)
+  }
+
   changeMessages = (setMessages) => {
     this.setState({
       messages: setMessages
@@ -44,19 +51,17 @@ class ChatBodyContainer extends Component {
     })
   }
 
-
   render() {
-    console.log(this.props)
     let member;
-    if(this.props.users.offline){
-      member = this.props.users.offline.filter( elem => {
+    if(this.props.usersList.users){
+      member = this.props.usersList.users.filter( elem => {
         if(elem.id === this.props.match.params.id) return elem
       }).shift()
     }
     return (
       <ChatBody
       messages={this.props.chat.messages?this.props.chat.messages[this.props.match.params.id]:[]}
-      vievMessages={this.sendViev}
+      vievMessages={()=>this.props.viewMessages(this.props.match.params.id)}
       chatUser={'' || member}
       messageText={this.state.message}
       handleChange={this.handleChange}
@@ -73,7 +78,7 @@ class ChatBodyContainer extends Component {
 function mapDispatchToProps(dispatch) {
   return {
     sendMessage: bindActionCreators(sendMessage, dispatch),
-    vievMessages: bindActionCreators(vievMessages, dispatch),
+    viewMessages: bindActionCreators(viewMessages, dispatch),
   };
 }
 

@@ -1,8 +1,9 @@
 import { users } from '../chatSocket';
 
-export default function getMessages(userId) {
+export default function viewMessages(userId) {
   const token = window.localStorage.getItem('PersonToken');
   return (dispatch) => {
-    users.emet('vievMessages', userId)
+    users.emit('viewMessages', { token, userId });
+    dispatch({ type: 'VIEW_MESSAGE', payload: { userId } });
   };
 }

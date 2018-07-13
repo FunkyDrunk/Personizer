@@ -44,7 +44,7 @@ class ChatBody extends Component {
           })
           }
         </div>
-        <ChatForm messageText={this.props.messageText} handleChange={this.props.handleChange} handleSubmit={this.props.handleSubmit} />
+        <ChatForm vievMessages={this.props.vievMessages} messageText={this.props.messageText} handleChange={this.props.handleChange} handleSubmit={this.props.handleSubmit} />
       </div>
     );
   }

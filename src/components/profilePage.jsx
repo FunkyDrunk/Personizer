@@ -74,6 +74,9 @@ class ProfilePage extends PureComponent {
           </div>
         }
         </div>
+        <div className="profile-page-content" >
+          <button name="loginOut" onClick={this.props.loginOut} >Login Out</button>
+        </div>
       </div>
 
     );
