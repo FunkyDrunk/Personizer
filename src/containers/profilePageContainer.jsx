@@ -23,7 +23,10 @@ class ProfilePageContainer extends PureComponent {
     avatarForm: '',
     activeChangeOption:'',
   }
-
+  loginOut = () => {
+    window.localStorage.removeItem('PersonToken');
+    window.location.reload(true)
+  }
   handleTogle = (event) => {
     // FIXME: ailed prop type: You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field.
     //If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`
@@ -96,6 +99,7 @@ class ProfilePageContainer extends PureComponent {
       roleForm={this.state.roleForm}
       handleTogle={this.handleTogle}
       activeChangeOption={this.state.activeChangeOption}
+      loginOut={this.loginOut}
       />
     );
   }

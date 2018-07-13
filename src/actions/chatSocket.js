@@ -7,8 +7,7 @@ export const users = io.connect(`${serverURL}/chat`);
 
 
 export default function chatSocket() {
-  const socket = io.connect(`${serverURL}/chat`);
   users.on('connect', () => {
-    console.log('connect')
+    console.log('connect'); // FIXME: loginout => close
   });
 }
