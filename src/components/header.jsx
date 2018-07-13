@@ -8,7 +8,7 @@ class Header extends PureComponent {
     return (
       <div className="header">
         <div className="header-logo">
-          <Link to="/start" className="header-link"><h2>PersonIzer</h2></Link>
+          <Link to="/" className="header-link"><h2>PersonIzer</h2></Link>
         </div>
         <div className="header-userinfo">
           <span>{this.props.name || 'Guest'}</span>

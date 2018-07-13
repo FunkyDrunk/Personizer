@@ -7,6 +7,7 @@ import history from '../services/history';
 import store from '../services/store';
 import AppContainer from './appContainer';
 import StartPageContainer from './startPageContainer';
+import ReadmePage from '../components/readme';
 
 // const history = syncHistoryWithStore(browserHistory, store);
 
@@ -16,8 +17,9 @@ class AppRoutContainer extends PureComponent {
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <Switch>
-            <Route  path="/main/" component={AppContainer} />
-            <Route  path="/start/" component={StartPageContainer} />
+            <Route exact path="/" component={ReadmePage} />
+            <Route path="/main/" component={AppContainer} />
+            <Route path="/start/" component={StartPageContainer} />
           </Switch>
         </ConnectedRouter>
       </Provider>

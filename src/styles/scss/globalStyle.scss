@@ -9,3 +9,18 @@ body{
 .main-content {
   display: flex;
 }
+
+.readme-page{
+  padding: 20%;
+  padding-top: 5%;
+  padding-bottom: 0;
+  font-size: $fsz+2;
+  h1{
+    text-align: center;
+  }
+  a{
+    display: block;
+    padding-top: 20px;
+    color: $colorAccentLow;
+  }
+}

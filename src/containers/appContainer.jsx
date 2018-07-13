@@ -29,7 +29,6 @@ class AppContainer extends Component {
     } else this.props.push('/start/');
   }
   render() {
-    console.log(this.props)
     return (
       <div className="App">
         <HeaderContainer />

@@ -6,3 +6,15 @@ body {
 
 .main-content {
   display: flex; }
+
+.readme-page {
+  padding: 20%;
+  padding-top: 5%;
+  padding-bottom: 0;
+  font-size: 18px; }
+  .readme-page h1 {
+    text-align: center; }
+  .readme-page a {
+    display: block;
+    padding-top: 20px;
+    color: #6699aa; }

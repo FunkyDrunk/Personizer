@@ -4,8 +4,8 @@ class AddConferenceField extends Component {
   render() {
     return (
       <div>
-      <input value={this.props.createNewConferenceName} onChange={this.props.handleChangeName}/>
-      <button onClick={this.props.createNewConference}>add new conference </button>
+        <input value={this.props.createNewConferenceName} onChange={this.props.handleChangeName} />
+        <button onClick={this.props.createNewConference}>add new conference </button>
       </div>
     );
   }
